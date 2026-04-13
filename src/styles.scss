@@ -1,1 +1,218 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    // typography: Roboto,
+    typography: Poppins,
+    density: 0,
+  ));
+}
+
+// Poppins - Regular
+@font-face {
+  font-family: "poppins-regular";
+  src: local("Poppins-Regular"),
+       url("/Assert/Fonts/Fonts/Poppins-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+// poppins- thin
+@font-face {
+  font-family: "Poppins";
+  src: url("/Assert/Fonts/Fonts/Poppins-Thin.ttf") format("truetype");
+  font-weight: 100;
+}
+
+// poppins- ExtraLight
+@font-face {
+  font-family: "Poppins";
+  src: url("/Assert/Fonts/Fonts/Poppins-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+}
+
+// poppins- light
+@font-face {
+  font-family: "Poppins";
+  src: url("/Assert/Fonts/Fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+// poppins- medium(500)
+@font-face {
+  font-family: "poppins-medium";
+  src: url("/Assert/Fonts/Fonts/Poppins-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+// poppins- semiBold(600)
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("/Assert/Fonts/Fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-display: swap;
+}
+
+// poppins- bold(700)
+@font-face {
+  font-family: "poppins-bold";
+  src: local("Poppins-Bold"),
+       url("/Assert/Fonts/Fonts/Poppins-Bold.ttf") format("truetype");
+       font-display: swap;
+}
+
+// poppins- ExtraBold
+@font-face {
+  font-family: "Poppins";
+  src: url("/Assert/Fonts/Fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+}
+
+// poppins- Black
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins-Black"),
+       url("/Assert/Fonts/Fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+// --------------------
+// Roboto - Black
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/Assert/Fonts/Fonts/Roboto-thin.ttf") format("truetype");
+  font-weight: 100;
+}
+
+
+@font-face{
+  font-family: "Roboto";
+  src: url("/Assert/Fonts/Fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: "Roboto";
+  src: url("/Assert/Fonts/Fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Roboto";
+  src: url("/Assert/Fonts/Fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Roboto";
+  src: url("/Assert/Fonts/Fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 900;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+/* I add global styles to this file, and also import other style files */
+
+
+@import 'styles/variables';
+@import 'styles/themes';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color-main);
+  color: var(--text-dark);
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body { margin: 0; font-family: "Poppins", sans-serif; }
+
+.mat-mdc-slide-toggle .mdc-switch__icons {   // this here used for hide the icon 
+  display: none;                            //  of the toggle switch where i used in profile page 
+}
+
+// body::-webkit-scrollbar {
+//   display: none;
+// }
+
+/* Chrome / Edge */
+::-webkit-scrollbar {  //for side scrollbar in whole page
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9c9c9;
+}
+
+.mdc-floating-label--required::after {
+  content: "" !important;
+  display: none !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

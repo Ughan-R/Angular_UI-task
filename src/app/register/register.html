@@ -1,0 +1,49 @@
+<div class="outerlogin">
+  <div class="card-top">
+    <h2>Sign Up</h2>
+  </div>
+
+  <mat-card class="login-card">
+    <div class="login-card-container">
+      <form action="" [formGroup]="userform">
+        <div class="innerlogin">
+          <mat-form-field class="inputbox">
+            <mat-label class="labelfloat">Name</mat-label>
+            <input type="text" matInput formControlName="Username" />
+            <mat-error *ngIf="Username?.hasError('required')"> Name is required </mat-error>
+            <mat-error *ngIf="Username?.hasError('minlength')">
+              Name must be at least 3 characters
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="inputbox">
+            <mat-label class="labelfloat">Email</mat-label>
+            <input type="email" matInput formControlName="useremail" name="Email" />
+            <mat-error *ngIf="useremail?.hasError('required')"> Email is required </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="inputbox">
+            <mat-label class="labelfloat">Password</mat-label>
+            <input type="password" matInput formControlName="password" name="password" />
+            <mat-error *ngIf="password?.hasError('required')"> Password is required </mat-error>
+            <mat-error *ngIf="password?.hasError('minlength')">
+              Password must be at least 6 characters
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="innerlowlogin">
+          <div class="checkbox">
+            <mat-checkbox >
+              <span class="container1" (click)="isagreed = !isagreed">I agree to the Terms of Service and Conditions</span>
+            </mat-checkbox>
+          </div>
+
+          <button mat-raised-button type="button" class="login-btn" (click)="register()" [disabled]="isagreed">
+            Sign up
+          </button>
+          <p class="signin-link">Already have an account? <a routerLink="/login">Sign in</a></p>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</div>

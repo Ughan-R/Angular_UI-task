@@ -1,0 +1,318 @@
+// .navbar {
+//   position: fixed;
+//   top: 0;
+//   left: 0;   // default position
+//   width: 250px;
+//   height: 100vh;
+//   background: #111;
+//   color: white;
+
+//   transition: all 0.4s ease; // smooth movement
+// }
+
+// .navbar.right {
+//   left: auto;
+//   right: 0;   // move to right
+// }
+
+
+// .navbar {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 250px;
+//   height: 100vh;
+//   background: #111;
+
+//   transform: translateX(0);
+//   transition: transform 0.4s ease;
+// }
+
+// .navbar.right {
+//   transform: translateX(calc(100vw - 250px));
+// }  
+
+
+// advanced part 
+
+// .layout {
+//   display: flex;
+//   transition: all 0.4s ease;
+// }
+
+// .navbar {
+//   width: 250px;
+//   height: 100vh;
+//   background: #111;
+//   color: white;
+// }
+
+// .content {
+//   flex: 1;
+//   padding: 20px;
+// } 
+
+// .layout.right {
+//   flex-direction: row-reverse;
+// }  
+
+// better version
+
+.layout {
+  display: flex;
+  position: relative;
+}
+
+.navbar {
+  width: 250px;
+  transition: transform 0.4s ease;
+}
+
+.content {
+  flex: 1;
+  transition: transform 0.4s ease;
+}
+
+/* when moved right */
+.layout.right .navbar {
+  transform: translateX(calc(100vw - 250px));
+}
+
+.layout.right .content {
+  transform: translateX(-250px);
+}
+
+.social-icons img {
+  width: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+/* --- Transactions --- */
+// .transactions-section {
+//   background: white;
+//   border-radius: 6px;
+//   padding: 12px;
+//   // box-shadow: ;
+//   font-family: 'Poppins';
+//   flex-grow: 1;
+
+//   .section-header {
+//     .date-range {
+//       display: flex;
+//       align-items: center;
+//       gap: 5px;
+//       font-size: 0.7rem;
+//       color: white;
+//       font-weight: 500;
+
+//       img {
+//         width: 16px;
+//         opacity: 0.6;
+//       }
+//     }
+//   }
+
+//   .transaction-group {
+//     margin-bottom: 16px;
+
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+
+//     .group-title {
+//       font-size: 0.75rem;
+//       color: white;
+//       letter-spacing: 0.5px;
+//       margin-bottom: 16px;
+//       text-transform: uppercase;
+//     }
+
+//     .transaction-item {
+//       display: flex;
+//       align-items: center;
+//       margin-bottom: 15px;
+
+//       &:last-child {
+//         margin-bottom: 0;
+//       }
+
+//       .tx-icon {
+//         width: 36px;
+//         height: 36px;
+//         border-radius: 50%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         margin-right: 16px;
+//         cursor: pointer;
+
+//         &.up {
+//           border: 1px solid green;
+//         }
+//         &.down {
+//           border: 1px solid red;
+//         }
+
+//         img {
+//           width: 18px;
+//         }
+//       }
+
+//       .tx-info {
+//         flex-grow: 1;
+
+//         h4 {
+//           font-size: 0.85rem;
+//           font-family: 'poppins-medium';
+//           margin-bottom: -2px;
+//         }
+//         p {
+//           font-size: 0.68rem;
+//           font-weight: 500;
+//           color: white;
+//         }
+//       }
+
+//       .tx-amount {
+//         font-family: 'poppins-medium';
+//         font-size: 0.85rem;
+
+//         &.credit {
+//           color:greenyellow;
+//         }
+//         &.debit {
+//           color: red;
+//         }
+//       }
+//     }
+//   }
+// }
+
+//settings slide box test
+
+.dashboard-container {
+  position: relative;
+  height: 100vh;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* settings button */
+.settings-btn {
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+}
+
+/* settings panel */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  right: -300px;   /* hidden */
+  width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+
+  transition: 0.3s ease;
+}
+
+/* open state */
+.settings-panel.open {
+  right: 0;
+}
+
+
+// color icon in settings box
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.red {
+  background: red;
+  color: white;
+}
+
+.blue {
+  background: blue;
+  color: white;
+}
+
+.green {
+  background: green;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+.sidebar.red {
+  background: red;
+}
+
+.sidebar.blue {
+  background: blue;
+}
+
+.sidebar.green {
+  background: green;
+}
+
+.sidebar.yellow {
+  background: yellow;
+}
+
+
+// toggle without angular material
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tx-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #f7f9fc;
+  margin-left: 50px;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+
+.tx-details.open {
+  max-height: 100px;
+  padding: 10px;
+  margin-top: 10px;
+}

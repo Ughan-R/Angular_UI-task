@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_26" data-name="Ellipse 26" cx="12" cy="12" r="12" transform="translate(0 0.406)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_40" data-name="Group 40" transform="translate(-1744 34.076)">
+    <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(1744 -34.482)" clip-path="url(#clip-path)">
+      <g id="noun-profile-973393" transform="translate(1.161 1.919)">
+        <path id="Path_473" data-name="Path 473" d="M235.306,33.25a5.476,5.476,0,1,1-5.476,5.476A5.485,5.485,0,0,1,235.306,33.25Z" transform="translate(-224.434 -33.25)" fill="#fff"/>
+        <path id="Path_474" data-name="Path 474" d="M133.163,278.435H111.42v-5.9a6.043,6.043,0,0,1,5.237-5.954,8.241,8.241,0,0,0,5.635,2.153,8.419,8.419,0,0,0,5.635-2.153,6,6,0,0,1,5.237,5.954Z" transform="translate(-111.42 -255.948)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Ellipse_27" data-name="Ellipse 27" transform="translate(1744 -34.076)" fill="none" stroke="#464646" stroke-width="1">
+      <circle cx="12" cy="12" r="12" stroke="none"/>
+      <circle cx="12" cy="12" r="11.5" fill="none"/>
+    </g>
+  </g>
+</svg>

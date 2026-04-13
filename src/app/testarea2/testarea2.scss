@@ -1,0 +1,71 @@
+.container {
+  height: 100vh;
+}
+
+.controls {
+  padding: 10px;
+  background: #eee;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 200px;
+  height: 90vh;
+  background: #2c3e50;
+  color: white;
+  position: relative;
+  left: 0;
+  transition: all 0.3s ease;
+  padding: 20px;
+  margin-top: 5%;
+}
+
+/* RTL move */
+.navbar.rtl {
+  left: 250px;
+}
+
+/* Fixed navbar */
+.navbar.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2196f3;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: 'poppins-medium';
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

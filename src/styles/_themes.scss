@@ -1,0 +1,159 @@
+/* _themes.scss */
+:root {
+  /* Brand constraints */
+  --brand-blue: #3E82F7;
+  --brand-orange: #ED811C;
+  --success-color: #05CD99;
+  --danger-color: #EE5D50;
+  --pink-color: #EA3E70;
+  
+  /* Brand Gradients */
+  --brand-gradient: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+  --brand-gradient-shadow: 0 4px 10px rgba(33, 82, 255, 0.3);
+
+  /* Light Theme */
+  --bg-color-main: #f4f7fe;
+  --card-bg: #FFFFFF;
+  --text-dark: #2B3674;
+  --text-gray: #A3AED0;
+  
+  --sidebar-bg: #32353E;
+  --sidebar-menu-bg: #444754;
+  --sidebar-text: #B4B7C1;
+  --sidebar-text-active: #FFFFFF;
+  --table-text:#000000;
+  --billinfo-box:#f7f9fc;
+
+--dark-bg-background:linear-gradient(135deg, #42424a, #191919);
+--dark-bg-boxshadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+--blue-bg-background:linear-gradient(135deg, #49a3f1, #4789e1);
+--blue-bg-boxshadow: 0 8px 16px rgba(115, 167, 235, 0.4);
+
+--green-bg-background:linear-gradient(135deg, #66bb6a, #43a047);
+--green-bg-boxshadow: 0 8px 16px rgba(134, 224, 138, 0.4);
+
+--pink-bg-background:linear-gradient(135deg, #ec407a, #d81b60);
+--pink-bg-boxshadow: 0 8px 16px rgba(222, 103, 147, 0.4);
+
+  --text-number:#303030;
+  
+  /* Element Specific */
+  --card-shadow: -2px 1px 10px rgba(218, 217, 217, 1);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  --border-color: rgba(0, 0, 0, 0.05);
+  --border-color-light: rgba(0, 0, 0, 0.02);
+  --border-color-strong: #e9ecef;
+  
+  --input-bg: #ffffff;
+  --input-border: rgba(0, 0, 0, 0.05);
+  --input-focus-shadow: 0 0 0 3px rgba(62, 130, 247, 0.1);
+  
+  --hover-bg: rgba(0, 0, 0, 0.05);
+  --nav-hover-bg: rgba(255, 255, 255, 0.05);
+  
+  --divider-gradient: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+  
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 15px 35px rgba(45, 106, 205, 0.2);
+}
+
+.dark-theme, [data-theme="dark"] {
+  /* Brand constraints */
+  --brand-blue: #3E82F7;
+  --brand-orange: #ED811C;
+  --success-color: #05CD99;
+  --danger-color: #EE5D50;
+  --pink-color: #EA3E70;
+  
+  /* Brand Gradients */
+  --brand-gradient: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+  --brand-gradient-shadow: 0 4px 10px rgba(33, 82, 255, 0.3);
+
+  /* Dark Theme */
+  --bg-color-main: #212223;
+  --card-bg: #1f1f1f;
+  --text-dark: #ffffff;
+  --text-gray: #A3AED0;
+  
+  --sidebar-bg: #32353E;
+  --sidebar-menu-bg: #444754;
+  --sidebar-text: #B4B7C1;
+  --sidebar-text-active: #FFFFFF;
+
+  --text-number:#ffffffc4;
+   --billinfo-box:#343434;
+   --table-text:#ffffffe2;
+
+
+--dark-bg-background:linear-gradient(135deg, #42424a, #191919);
+--dark-bg-boxshadow: -1px 1px 6px rgba(0, 0, 0, 0.2);
+
+--blue-bg-background:#075fac;
+--blue-bg-boxshadow:  -1px 1px 6px rgba(115, 167, 235, 0.4);
+
+--green-bg-background:rgb(2, 129, 2);
+--green-bg-boxshadow:  -1px 1px 6px rgba(134, 224, 138, 0.4);
+
+--pink-bg-background:rgb(207, 14, 70);
+--pink-bg-boxshadow:  -1px 1px 6px rgba(222, 103, 147, 0.4);
+
+  /* Element Specific */
+  --card-shadow: -1px 1px 6px rgb(59 59 59);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-light: rgba(255, 255, 255, 0.05);
+  --border-color-strong: rgba(255, 255, 255, 0.2);
+  
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-shadow: 0 0 0 3px rgba(62, 130, 247, 0.3);
+  
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --nav-hover-bg: rgba(255, 255, 255, 0.1);
+  
+  --divider-gradient: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+
+  --glass-bg: rgba(31, 31, 31, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+
+  /* Icon Colors - Excuding Sidebar per user request */
+  .card-icon img,
+  .chart-actions img,
+  .expand-icon,
+  // .tx-icon img,
+  .icon-btn img,
+  .time-icon,
+  .header-icons img,
+  .cancle-settings img,
+  .socialbox img,
+  .home-icon,
+  .btn img,
+  .date-range img,
+  .edit-icon img,
+  #github-logo,
+  #close,
+  .sort-icon,
+  .floating-settings-btn img,
+  .social-icons svg,
+  .below-container img,
+  .new-data img,
+  #dark,
+  .btn-tab mat-icon {
+    filter: brightness(0) invert(1) !important;
+  }
+
+
+
+  svg {
+    &[stroke="currentColor"], &[fill="currentColor"] {
+       color: #ffffff !important;
+    }
+  }
+}

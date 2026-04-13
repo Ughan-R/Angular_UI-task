@@ -1,0 +1,195 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+.notifications-container { 
+  padding: 0px 10px;
+  background-color: var(--bg-color-main); 
+  min-height: 100vh;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+.card { 
+  background: var(--card-bg);
+  border-radius: 8px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  padding: 5px 0px 16px; 
+}
+
+.card-title {
+  color: var(--text-dark);
+  font-size: 16px;
+  font-family: 'poppins-semibold';
+}
+
+.card-subtitle {
+  color: var(--text-gray);
+  font-size: 12px;
+  font-family: 'poppins-regular';
+  margin-top: 8px;
+}
+
+.card-body {
+  padding:10px 55px 15px;
+  display: flex;        
+  flex-wrap: wrap;      
+  gap: 15px;            
+  flex-direction: column; 
+}
+
+
+.alert {
+  padding: 18px 20px;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: 'poppins-medium';
+  color: #ffffff;
+  line-height:1.5;
+  cursor:pointer;
+}
+
+.alerts-card{
+  margin-bottom: 30px;
+}
+
+/* Specific alert colors */
+.alert-primary {
+  background-color: #ea0662; 
+  background-image: linear-gradient(310deg, #ea0662 0%, #ff667c 100%);
+}
+
+.alert-secondary {
+  background-color: #6c757d;
+  background-image: linear-gradient(310deg, #6c757d 0%, #8392ab 100%);
+}
+
+.alert-success {
+  background-color: #2ce095;
+  background-image: linear-gradient(310deg, #2dce89 0%, #2ce095 100%);
+}
+
+.alert-error {
+  background-color: #f5365c;
+  background-image: linear-gradient(310deg, #f5365c 0%, #f56036 100%);
+}
+
+.alert-warning {
+  background-color: #11cdef;
+  background-image: linear-gradient(310deg, #11cdef 0%, #1171ef 100%);
+}
+
+.alert-info {
+  background-color: #fb6340;
+  background-image: linear-gradient(310deg, #fb6340 0%, #fbb140 100%);
+}
+
+.alert-light {
+  background-color: var(--border-color-strong);
+  background-image: none;
+  color: var(--text-gray);
+}
+
+.alert-dark {
+  background-color: var(--text-dark);
+  background-image: linear-gradient(310deg, #344767 0%, #141727 100%);
+}
+
+/* Notifications buttons section */
+.notifications-buttons {
+  display: flex;       /* layout for notification buttons */
+  flex-wrap: wrap;
+  gap: 32px;
+  flex-direction: row;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 32px;
+  font-size: 11px;
+  font-family: 'poppins-medium';
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Button colors */
+.btn-success {
+  background-image: linear-gradient(310deg, #2dce89 0%, #2ce095 100%);
+  background-color: #2dce89;
+}
+
+.btn-info {
+  background-image: linear-gradient(310deg, #11cdef 0%, #1171ef 100%);
+  background-color: #11cdef;
+}
+
+.btn-warning {
+  background-image: linear-gradient(310deg, #fbb140 0%, #fbb140 100%);
+  background-color: #fbb140;
+   /* dark text for visibility */
+}
+
+.btn-error {
+  background-image: linear-gradient(310deg, #ea0662 0%, #ff667c 100%);
+  background-color: #ea0662;
+}
+ 
+.success-message,.info-message,.warning-message,.error-message{
+  position: fixed;
+  top:100px;
+  right: 13px;
+  background-color: #2dce89;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: 'poppins-medium';
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-message{
+  background-color: var(--brand-blue);
+}
+
+.warning-message{
+  background-color: #fbb140;
+}
+
+.error-message{
+  background-color: #ea0662;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

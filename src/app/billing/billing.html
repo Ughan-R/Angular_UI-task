@@ -1,0 +1,317 @@
+<div class="billing-container">
+  <!-- Left Column -->
+  <div class="left-col">
+    <!-- Top Row section -->
+    <div class="top-row">
+      <!-- Credit Card -->
+      <div class="credit-card">
+        <img src="/icons/image/images/BgImages/card.jpg" alt="Credit Card" class="card-image" />
+      </div>
+
+      <!-- Assets / Wallets -->
+      <div class="wallet-card">
+        <div class="wallet-icon salary">
+          <img src="icons/image/images/LightThemeSvg/Salary.svg" alt="Salary" />
+        </div>
+        <div class="wallet-info">
+          <h3>Salary</h3>
+          <p>Belong Interactive</p>
+        </div>
+        <div class="wallet-amount">+$2000</div>
+      </div>
+
+      <div class="wallet-card">
+        <div class="wallet-icon paypal">
+          <img src="icons/image/images/png/icons8-paypal-48.png" alt="Paypal" />
+        </div>
+        <div class="wallet-info">
+          <h3>Paypal</h3>
+          <p>Freelance Payment</p>
+        </div>
+        <div class="wallet-amount">$455.00</div>
+      </div>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="payment-method-section">
+      <div class="section-header">
+        <h2>Payment Method</h2>
+        <button class="btn btn-dark">ADD NEW CARD</button>
+      </div>
+      <div class="payment-cards">
+        <div class="payment-card">
+          <span>**** **** **** 7852</span>
+        </div>
+        <div class="payment-card">
+          <span>**** **** **** 5248</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Billing Information -->
+    <div class="billing-info-section">
+      <div class="billing-info-header">
+        <h2>Billing Information</h2>
+        <button class="btn btn-dark" (click)="openinfobox()">ADD NEW INFO</button>
+      </div>
+      <div class="billing-list-container">
+        <div class="billing-list">
+          <div class="billing-item" *ngFor="let info of billinginfo">
+            <div class="item-header">
+              <h3>{{ info.name }}</h3>
+              <div class="actions">
+                <button class="btn text-danger" (click)="deleteinfo(info)">
+                  <img src="icons/image/images/LightThemeSvg/delete.svg" alt="Delete" /> DELETE
+                </button>
+                <button class="btn text-dark" (click)="editinfo(info)">
+                  <img src="icons/image/images/LightThemeSvg/edit.svg" alt="Edit" /> EDIT
+                </button>
+              </div>
+            </div>
+            <div class="item-details">
+              <p>
+                Company Name : <span class="highlight">{{ info.companyName }}</span>
+              </p>
+              <p>
+                Email Address : <span class="highlight">{{ info.email }}</span>
+              </p>
+              <p>
+                VAT Number : <span class="highlight">{{ info.vatNumber }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="billing_api_info" *ngIf="addinfo">
+      <div class="billing_container">
+        <form [formGroup]="billingform">
+          <label for="">
+            Employee name:
+            <input type="text" placeholder="Enter employee name" formControlName="name" />
+            <div *ngIf="billingform.get('name')?.invalid && billingform.get('name')?.touched">
+              <p *ngIf="billingform.get('name')?.hasError('required')">Name is required</p>
+              <p *ngIf="billingform.get('name')?.hasError('minlength')">
+                Name must be at least 3 characters long
+              </p>
+            </div>
+          </label>
+          <label for="">
+            Company name:
+            <input type="text" placeholder="Enter company name" formControlName="companyName" />
+            <div
+              *ngIf="
+                billingform.get('companyName')?.invalid && billingform.get('companyName')?.touched
+              "
+            >
+              <p *ngIf="billingform.get('companyName')?.hasError('required')">
+                Company name is required
+              </p>
+              <p *ngIf="billingform.get('companyName')?.hasError('minlength')">
+                Company name must be at least 3 characters long
+              </p>
+            </div>
+          </label>
+          <label for="">
+            Email Address:
+            <input type="text" placeholder="Enter email address" formControlName="email" />
+            <div *ngIf="billingform.get('email')?.invalid && billingform.get('email')?.touched">
+              <p *ngIf="billingform.get('email')?.hasError('required')">
+                Email address is required
+              </p>
+              <p *ngIf="billingform.get('email')?.hasError('email')">Email address is invalid</p>
+            </div>
+          </label>
+          <label for="">
+            VAT Number:
+            <input type="text" placeholder="Enter VAT number" formControlName="vatNumber" />
+            <div
+              *ngIf="billingform.get('vatNumber')?.invalid && billingform.get('vatNumber')?.touched"
+            >
+              <p *ngIf="billingform.get('vatNumber')?.hasError('required')">
+                VAT number is required
+              </p>
+              <p *ngIf="billingform.get('vatNumber')?.hasError('minlength')">
+                VAT number must be at least 3 characters long
+              </p>
+            </div>
+          </label>
+          <button type="button" (click)="newbillinginfo()">Submit</button>
+          <button type="button" (click)="resetform()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-col">
+    <!-- Invoices -->
+    <div class="invoices-section">
+      <div class="section-header">
+        <h2>Invoices</h2>
+        <button class="btn btn-outline-primary" (click)="popupbox()">VIEW ALL</button>
+      </div>
+      <div class="invoice-list">
+        <div class="invoice-item" *ngFor="let invoice of invoices">
+          <div class="invoice-info">
+            <span class="invoice-date">{{ invoice.date }}</span>
+            <span class="invoice-id" *ngIf="invoice.id">{{ invoice.id }}</span>
+          </div>
+          <div class="invoice-amount">
+            <span class="amount-val">$ {{ invoice.amount }}</span>
+            <button class="btn btn-link" (click)="openPdf(invoice.pdf)">
+              <img src="icons/image/images/LightThemeSvg/pdf-bright.svg" alt="PDF" /> PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transactions -->
+    <div class="transactions-section">
+      <div class="section-header">
+        <h2>Your Transaction's</h2>
+        <span class="date-range">
+          <img src="icons/image/images/LightThemeSvg/calender.svg" alt="Calendar" />
+          23-30 March 2020
+        </span>
+      </div>
+
+      <div class="transaction-group">
+        <h4 class="group-title">NEWEST</h4>
+        <div class="transaction-item" *ngFor="let tx of newestTransactions">
+          <div class="tx-row" [ngClass]="tx.status">
+            <div class="tx-icon" (click)="toggletx(tx)">
+              <img
+                *ngIf="tx.status === 'down'"
+                src="icons/image/images/LightThemeSvg/accord_red.svg"
+              />
+              <img
+                *ngIf="tx.status === 'up'"
+                src="/icons/image/images/LightThemeSvg/accord_green.svg"
+              />
+            </div>
+            <div class="tx-info">
+              <h4>{{ tx.name }}</h4>
+              <p>{{ tx.date }}</p>
+            </div>
+
+            <div class="tx-amount" [ngClass]="tx.type">
+              {{ tx.type === 'credit' ? '+' : '-' }}${{ tx.amount | number }}
+            </div>
+          </div>
+          <div class="tx-details" [class.open]="tx.isOpen">
+            <!-- <p>Transaction ID: {{ tx.id }}</p> -->
+            <p>Status: {{ tx.type }}</p>
+            <p>Amount: ${{ tx.amount }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="transaction-group">
+        <h4 class="group-title">YESTERDAY</h4>
+        <div class="transaction-item" *ngFor="let tx of olderTransactions">
+          <div class="tx-row" [ngClass]="tx.status">
+            <div class="tx-icon" (click)="toggletx(tx)">
+              <img
+                *ngIf="tx.status === 'down'"
+                src="icons/image/images/LightThemeSvg/accord_red.svg"
+              />
+              <img
+                *ngIf="tx.status === 'up'"
+                src="/icons/image/images/LightThemeSvg/accord_green.svg"
+              />
+            </div>
+
+            <div class="tx-info">
+              <h4>{{ tx.name }}</h4>
+              <p>{{ tx.date }}</p>
+            </div>
+            <div class="tx-amount" [ngClass]="tx.type">
+              {{ tx.type === 'credit' ? '+' : '-' }}${{ tx.amount | number }}
+            </div>
+          </div>
+          <div class="tx-details" [class.open]="tx.isOpen">
+            <!-- <p>Transaction ID: {{ tx.id }}</p> -->
+            <p>Status: {{ tx.type }}</p>
+            <p>Amount: ${{ tx.amount }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="layoutinvoice" *ngIf="showinvoicepopup">
+  <div class="invoices-section-popup" *ngIf="showinvoicepopup">
+    <img src="icons/image/images/png/close.png" alt="close" (click)="popupbox()" id="close" />
+    <div class="section-header">
+      <h2>Invoices</h2>
+    </div>
+    <div class="invoice-list">
+      <div class="invoice-item" *ngFor="let invoice of invoices">
+        <div class="invoice-info">
+          <span class="invoice-date">{{ invoice.date }}</span>
+          <span class="invoice-id" *ngIf="invoice.id">{{ invoice.id }}</span>
+        </div>
+        <div class="invoice-amount">
+          <span class="amount-val">$ {{ invoice.amount }}</span>
+          <button class="btn btn-link" (click)="openPdf(invoice.pdf)">
+            <img src="icons/image/images/LightThemeSvg/pdf-bright.svg" alt="PDF" /> PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="billing_api_info" *ngIf="editmode">
+  <div class="billing_container">
+    <form [formGroup]="billingform" (ngSubmit)="updateinfo()">
+      <label for="">
+        Employee name:
+        <input type="text" placeholder="Enter employee name" formControlName="name" />
+        <div *ngIf="billingform.get('name')?.invalid && billingform.get('name')?.touched">
+          <p *ngIf="billingform.get('name')?.hasError('required')">Name is required</p>
+          <p *ngIf="billingform.get('name')?.hasError('minlength')">
+            Name must be at least 3 characters long
+          </p>
+        </div>
+      </label>
+      <label for="">
+        Company name:
+        <input type="text" placeholder="Enter company name" formControlName="companyName" />
+        <div
+          *ngIf="billingform.get('companyName')?.invalid && billingform.get('companyName')?.touched"
+        >
+          <p *ngIf="billingform.get('companyName')?.hasError('required')">
+            Company name is required
+          </p>
+          <p *ngIf="billingform.get('companyName')?.hasError('minlength')">
+            Company name must be at least 3 characters long
+          </p>
+        </div>
+      </label>
+      <label for="">
+        Email Address:
+        <input type="text" placeholder="Enter email address" formControlName="email" />
+        <div *ngIf="billingform.get('email')?.invalid && billingform.get('email')?.touched">
+          <p *ngIf="billingform.get('email')?.hasError('required')">Email address is required</p>
+          <p *ngIf="billingform.get('email')?.hasError('email')">Email address is invalid</p>
+        </div>
+      </label>
+      <label for="">
+        VAT Number:
+        <input type="text" placeholder="Enter VAT number" formControlName="vatNumber" />
+        <div *ngIf="billingform.get('vatNumber')?.invalid && billingform.get('vatNumber')?.touched">
+          <p *ngIf="billingform.get('vatNumber')?.hasError('required')">VAT number is required</p>
+          <p *ngIf="billingform.get('vatNumber')?.hasError('minlength')">
+            VAT number must be at least 3 characters long
+          </p>
+        </div>
+      </label>
+      <button type="submit">Submit</button>
+      <button type="button" (click)="resetform()">Cancel</button>
+    </form>
+  </div>
+</div>

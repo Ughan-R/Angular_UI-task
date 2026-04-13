@@ -1,0 +1,732 @@
+/* Global Dashboard Variables */
+$bg-color: var(--card-bg); 
+$card-bg: var(--card-bg);
+$text-dark: var(--text-dark);
+$text-light: var(--text-gray);
+$primary-color: var(--brand-blue); /* Blue for 'Salary' icon background */
+$danger-color: var(--danger-color);
+$success-color: var(--success-color);
+$border-radius: var(--border-radius);
+$box-shadow: var(--shadow-sm);
+$font-family: 'Inter', 'Roboto', sans-serif;
+
+.billing-container {
+  display: grid;
+  // margin-top: -25px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 10px;
+  background-color: transparent;
+  font-family: 'Poppins';
+  color: $text-dark;
+  box-sizing: border-box;
+  background: var(--bg-color-main);
+
+  * {
+    box-sizing: inherit;
+  }
+}
+
+/* Typography & Reset */
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-family: 'poppins-semibold';
+  font-size: 14px;
+  color: $text-dark;
+}
+
+h3 {
+  font-size: 1rem;
+  font-family: 'poppins-semibold';
+}
+
+.text-danger {
+  color: $danger-color;
+}
+.text-dark {
+  color: $text-dark;
+}
+.highlight {
+  font-family: 'poppins-semibold';
+  color: $text-dark;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'poppins-semibold';
+  font-size: 0.75rem;
+  padding: 1px 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &-dark {
+    background: #343a40;
+    color: white;
+    padding: 8px 13px;
+    font-size: 0.6rem;
+    &:hover {
+      background: #23272b;
+    }
+  }
+
+  &-outline-primary {
+    border: 1px solid $primary-color;
+    font-family: 'poppins-semibold';
+    color: $primary-color;
+    border-radius: 6px;
+    padding: 2px 10px;
+    &:hover {
+      background: rgba($primary-color, 0.05);
+    }
+  }
+
+  &-link {
+    color: $text-dark;
+    font-family: 'poppins-semibold';
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+/* Common Section Styles */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* ==================================
+   LEFT COLUMN
+   ================================== */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- Top Row (Card + Wallets) --- */
+.top-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 15px;
+}
+
+/* Credit Card */
+.credit-card {
+  height: 155px;
+  width: 285px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-bg);
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+
+/* Wallet Card */
+.wallet-card {
+  background: $card-bg;
+  border-radius: $border-radius;
+  padding: 10px;
+  height: 155px;
+  width: 145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+
+  .wallet-info > p {
+    font-size: 8px;
+    // height: 12px;
+    // width: 100%;
+    font-family: 'poppins-medium';
+  }
+
+  .wallet-amount {
+    font-size: 10px;
+    // height: 12px;
+    // width: 100%;
+    font-family: 'poppins-regular';
+  }
+
+  .wallet-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+
+    img {
+      width: 20px;
+    }
+
+    &.salary {
+      background-color: $primary-color;
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+    &.paypal {
+      background-color: var(--card-bg);
+      img {
+        width: 40px;
+      }
+    }
+  }
+
+  .wallet-info {
+    h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+      margin-top: -9px;
+      font-family: 'poppins-semibold';
+    }
+    p {
+      font-size: 11px;
+      color: $text-light;
+      margin-bottom: 15px;
+      font-family: 'poppins-medium';
+    }
+  }
+
+  .wallet-amount {
+    font-size: 1.1rem;
+    font-family: 'poppins-semibold';
+    color: $text-dark;
+  }
+}
+
+/* --- Payment Method --- */
+.payment-method-section {
+  background: $card-bg;
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: var(--card-shadow);
+  font-family: 'Poppins';
+
+  h2 {
+    font-size: 15px;
+    font-family: 'poppins-semibold';
+  }
+
+  .payment-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .payment-card {
+    background: $card-bg;
+    border: 1px solid var(--border-color-strong);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-family: 'poppins-bold';
+    color: $text-dark;
+    // box-shadow: var(--card-shadow);
+    min-height: 44px;
+  }
+}
+
+/* --- Billing Information --- */
+.billing-info-section {
+  background: $card-bg;
+  border-radius: $border-radius;
+  padding: 22px;
+  box-shadow: var(--card-shadow);
+  font-family: 'Poppins';
+  .billing-info-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    h2 {
+      font-size: 15px;
+      text-align: center;
+      font-family: 'poppins-semibold';
+    }
+  }
+
+  .billing-list-container{
+    height: 385px;
+    // overflow-y: auto;
+    overflow-y: scroll;
+    // scrollbar-width: none;
+  }
+
+  .billing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .billing-item {
+    // background-color: #f8fafc;
+    background-color: var(--bg-color-main);
+    border-radius: 9px;
+    padding: 8px;
+    font-family: 'Poppins';
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+
+      h3 {
+        font-size: 15px;
+        font-family: 'poppins-semibold';
+        color: $text-dark;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+      }
+    }
+
+    .item-details {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+      p {
+        font-size: 0.75rem;
+        font-family: 'poppins-semibold';
+        color: $text-light;
+      }
+    }
+  }
+}
+
+/* ==================================
+   RIGHT COLUMN
+   ================================== */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- Invoices --- */
+.invoices-section {
+  background: $card-bg;
+  border-radius: $border-radius;
+  padding: 24px;
+  font-family: 'Poppins';
+  box-shadow: var(--card-shadow);
+
+  .invoice-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .invoice-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0px;
+    // border-bottom: 1px solid #f0f2f5;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .invoice-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .invoice-date {
+        font-family: 'poppins-semibold';
+        font-size: 0.8rem;
+      }
+      .invoice-id {
+        font-size: 0.75rem;
+        color: $text-light;
+      }
+    }
+
+    .invoice-amount {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      .amount-val {
+        color: $text-light;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.invoices-section-popup {
+  position: fixed;
+  top: 19%;
+  right: 24%;
+  height: 53%;
+  width: 46%;
+  z-index: 1000;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  animation: popupAnimation 0.5s ease-out;
+    #close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .invoice-list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .invoice-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0px;
+    // border-bottom: 1px solid #f0f2f5;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .invoice-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .invoice-date {
+        font-family: 'poppins-semibold';
+        font-size: 0.8rem;
+      }
+      .invoice-id {
+        font-size: 0.75rem;
+        color: $text-light;
+      }
+    }
+
+    .invoice-amount {
+      display: flex;
+      align-items: center;
+      gap: 95px;
+
+      .amount-val {
+        color: $text-light;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.layoutinvoice{
+  background: #000000;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+@keyframes popupAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Billing Popup Styling --- */
+.billing_api_info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+
+  .billing_container {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: popupAnimation 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid var(--border-color-strong);
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        color: var(--text-dark);
+        font-family: 'poppins-semibold';
+        font-size: 0.85rem;
+
+        input {
+          padding: 14px 16px;
+          border: 1px solid var(--border-color-strong);
+          border-radius: 12px;
+          background: var(--input-bg);
+          color: var(--text-dark);
+          font-family: 'Poppins';
+          font-weight: 400;
+          outline: none;
+          transition: all 0.2s ease;
+
+          &:focus {
+            border-color: var(--brand-blue);
+            box-shadow: 0 0 0 4px rgba(62, 130, 247, 0.1);
+            background: var(--card-bg);
+          }
+
+          &::placeholder {
+            color: var(--text-gray);
+            opacity: 0.5;
+            font-size: 0.8rem;
+          }
+        }
+
+        div { // Error container
+          p {
+            color: var(--danger-color);
+            font-size: 0.7rem;
+            margin-top: 5px;
+            font-family: 'poppins-medium';
+            animation: fadeIn 0.2s ease;
+          }
+        }
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 14px;
+        background: var(--brand-gradient);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-family: 'poppins-bold';
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: var(--brand-gradient-shadow);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(33, 82, 255, 0.4);
+          filter: brightness(1.1);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.transactions-section {
+  background: $card-bg;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: var(--card-shadow);
+  font-family: 'Poppins';
+  flex-grow: 1;
+
+  height: 428px;
+  overflow-y: scroll;
+
+  .section-header {
+    .date-range {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      color: $text-light;
+      font-family: 'poppins-medium';
+
+      img {
+        width: 16px;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .transaction-group {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .group-title {
+      font-size: 0.75rem;
+      color: $text-light;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .transaction-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .tx-row {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .tx-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 16px;
+        cursor: pointer;
+
+        &.up {
+          border: 1px solid $success-color;
+        }
+
+        &.down {
+          border: 1px solid $danger-color;
+        }
+
+
+        img {
+          width: 18px;
+          transition: transform 0.3s ease;
+        }
+        &:hover img{
+          transform: rotate(180deg);
+        }
+      }
+
+      .tx-info {
+        flex-grow: 1;
+
+        h4 {
+          font-size: 0.85rem;
+          font-family: 'poppins-semibold';
+          margin-bottom: -2px;
+        }
+
+        p {
+          font-size: 0.68rem;
+          font-family: 'poppins-medium';
+          color: $text-light;
+        }
+      }
+
+      .tx-amount {
+        font-family: 'poppins-semibold';
+        font-size: 0.85rem;
+
+        &.credit {
+          color: $success-color;
+        }
+
+        &.debit {
+          color: $danger-color;
+        }
+      }
+
+      /* ✅ Toggle details inside item */
+      .tx-details {
+        max-height: 0;
+        font-family: 'poppins-medium';
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background:var(--billinfo-box);
+        margin-left: 50px;
+        border-radius: 6px;
+        padding: 0 10px;
+      }
+
+      .tx-details.open {
+        max-height: 120px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .billing-container {
+    grid-template-columns: 1fr;
+  }
+  .top-row {
+    grid-template-columns: 1fr;
+  }
+}

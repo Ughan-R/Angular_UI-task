@@ -1,0 +1,322 @@
+<div class="profile-layout">
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <div class="banner">
+      <img
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
+        alt="Mountain Banner"
+      />
+    </div>
+
+    <!-- Profile Overview Card -->
+    <div class="floating-profile-card">
+      <div class="card-header">
+        <div class="user-info">
+          <div class="avatar-large">
+            <img src="https://i.pravatar.cc/150?img=11" alt="Lucas Harper" />
+          </div>
+          <div class="user-details">
+            <h2>Lucas Harper</h2>
+            <p>CEO / Co-Founder</p>
+          </div>
+        </div>
+
+        <!-- buttons top -->
+        <div class="action-buttons">
+          <button mat-stroked-button class="btn-tab">
+            <mat-icon>apps</mat-icon>
+            App
+          </button>
+          <button mat-stroked-button class="btn-tab">
+            <mat-icon>message</mat-icon>
+            Message
+          </button>
+          <button mat-stroked-button class="btn-tab">
+            <mat-icon>settings</mat-icon>
+            Settings
+          </button>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <!-- Platform Settings -->
+        <div class="settings-column">
+          <h3>Platform Settings</h3>
+
+          <h4 class="section-title">ACCOUNT</h4>
+
+          <div class="toggle-row">
+            <mat-slide-toggle checked color="primary" class="size-toggle"
+              >send Email, someone follows me</mat-slide-toggle
+            >
+          </div>
+
+          <div class="toggle-row">
+            <mat-slide-toggle color="primary" class="size-toggle"
+              >Email when someone ans post</mat-slide-toggle
+            >
+          </div>
+
+          <div class="toggle-row">
+            <mat-slide-toggle checked color="primary" class="size-toggle"
+              >Email when someone mentions you</mat-slide-toggle
+            >
+          </div>
+
+          <h4 class="section-title mt-20">APPLICATION</h4>
+
+          <div class="toggle-row">
+            <mat-slide-toggle color="primary" class="size-toggle"
+              >New launches and projects</mat-slide-toggle
+            >
+          </div>
+
+          <div class="toggle-row">
+            <mat-slide-toggle checked color="primary" class="size-toggle"
+              >Monthly Product updates</mat-slide-toggle
+            >
+          </div>
+
+          <div class="toggle-row">
+            <mat-slide-toggle color="primary" class="size-toggle"
+              >Subscribe to newsletters</mat-slide-toggle
+            >
+          </div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="vertical-divider"></div>
+
+        <!-- Profile Information -->
+        <div class="profile-info-column">
+          <div class="col-header">
+            <h3>Profile Information</h3>
+            <button mat-icon-button  aria-label="Edit Profile">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <p class="desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eveniet
+            necessitatibus eaque porro dolores similique veniam harum totam nisi vero Lorem ipsum
+            dolor sit amet..
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <span class="label">Full Name:</span> <span class="value">Lorem Ipsum</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Mobile:</span> <span class="value">(44) 123 1234 123</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Email:</span> <span class="value">alrrcthomson@mail.com</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Location:</span> <span class="value">USA</span>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="info-item social">
+              <span class="label">Social:</span>
+              <div class="social-icons">
+                <button mat-icon-button class="social-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    ></path>
+                  </svg>
+                </button>
+                <button mat-icon-button class="social-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                    ></path>
+                  </svg>
+                </button>
+                <button mat-icon-button class="social-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider Line -->
+        <!-- <mat-divider [vertical]="true" class="vertical-divider"></mat-divider> -->
+        <div class="vertical-divider"></div>
+
+        <!-- Conversations -->
+        <div class="conversations-column">
+          <h3>Conversations</h3>
+          <div class="conversation-list">
+            <div class="conv-item">
+              <img src="https://i.pravatar.cc/150?img=5" alt="Sophie" class="conv-avatar" />
+              <div class="conv-text">
+                <span class="conv-name">Sophie B.</span>
+                <span class="conv-msg">Hi! I need more infor..</span>
+              </div>
+              <button mat-button color="accent" class="reply-btn">REPLY</button>
+            </div>
+            <div class="conv-item">
+              <img src="https://i.pravatar.cc/150?img=6" alt="Peterson" class="conv-avatar" />
+              <div class="conv-text">
+                <span class="conv-name">Peterson</span>
+                <span class="conv-msg">Awesome work, c..</span>
+              </div>
+              <button mat-button color="accent" class="reply-btn">REPLY</button>
+            </div>
+            <div class="conv-item">
+              <img src="https://i.pravatar.cc/150?img=7" alt="Ivanna" class="conv-avatar" />
+              <div class="conv-text">
+                <span class="conv-name">Ivanna</span>
+                <span class="conv-msg">About files I ca..</span>
+              </div>
+              <button mat-button color="accent" class="reply-btn">REPLY</button>
+            </div>
+            <div class="conv-item">
+              <img src="https://i.pravatar.cc/150?img=8" alt="Peterson" class="conv-avatar" />
+              <div class="conv-text">
+                <span class="conv-name">Peterson</span>
+                <span class="conv-msg">Awesome work, c..</span>
+              </div>
+              <button mat-button color="accent" class="reply-btn">REPLY</button>
+            </div>
+            <div class="conv-item">
+              <img src="https://i.pravatar.cc/150?img=9" alt="Samuel" class="conv-avatar" />
+              <div class="conv-text">
+                <span class="conv-name">Samuel</span>
+                <span class="conv-msg">Have a great after..</span>
+              </div>
+              <button mat-button color="accent" class="reply-btn">REPLY</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="projects-section">
+      <div class="projects-header">
+        <h3>Projects</h3>
+        <p class="subtitle">Architects design houses</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <mat-card class="project-card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=400"
+              alt="Project 2"
+            />
+          </div>
+          <mat-card-content>
+            <p class="project-num">Project #2</p>
+            <h4>Modern</h4>
+            <p class="project-desc">
+              As Uber works through a huge amount of internal management turmoil.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="project-footer">
+            <button mat-stroked-button color="primary" class="btn-outline">view project</button>
+            <div class="team-avatars">
+              <img src="https://i.pravatar.cc/150?img=1" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=2" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=3" class="avatar-small" />
+            </div>
+          </mat-card-actions>
+        </mat-card>
+
+        <!-- Project 2 -->
+        <mat-card class="project-card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=400"
+              alt="Project 1"
+            />
+          </div>
+          <mat-card-content>
+            <p class="project-num">Project #1</p>
+            <h4>Scandinavian</h4>
+            <p class="project-desc">
+              Music is something that everyone has their own specific opinion about.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="project-footer">
+            <button mat-stroked-button color="primary" class="btn-outline">view project</button>
+            <div class="team-avatars">
+              <img src="https://i.pravatar.cc/150?img=4" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=5" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=6" class="avatar-small" />
+            </div>
+          </mat-card-actions>
+        </mat-card>
+
+        <!-- Project 3 -->
+        <mat-card class="project-card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=400"
+              alt="Project 3"
+            />
+          </div>
+          <mat-card-content>
+            <p class="project-num">Project #3</p>
+            <h4>Minimalist</h4>
+            <p class="project-desc">
+              Different people have different taste and various type of music.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="project-footer">
+            <button mat-stroked-button color="primary" class="btn-outline">view project</button>
+            <div class="team-avatars">
+              <img src="https://i.pravatar.cc/150?img=7" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=8" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=9" class="avatar-small" />
+            </div>
+          </mat-card-actions>
+        </mat-card>
+
+        <!-- Project 4 -->
+        <mat-card class="project-card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&q=80&w=400"
+              alt="Project 4"
+            />
+          </div>
+          <mat-card-content>
+            <p class="project-num">Project #4</p>
+            <h4>Gothic</h4>
+            <p class="project-desc">
+              Why would anyone blue over pink? pink is obviously a better color.
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="project-footer">
+            <button mat-stroked-button color="primary" class="btn-outline">view project</button>
+            <div class="team-avatars">
+              <img src="https://i.pravatar.cc/150?img=10" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=11" class="avatar-small" />
+              <img src="https://i.pravatar.cc/150?img=12" class="avatar-small" />
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer class="footer"> -->
+      <!-- floating settings btn at bottom right -->
+      <!-- <div class="footer-links">
+        <a href="#">Table</a>
+        <a href="#">Billing</a>
+        <a href="#">Profile</a>
+      </div>
+    </footer> -->
+  </main>
+</div>

@@ -1,0 +1,22 @@
+{
+    "userinfo":[
+    {
+      "name": "Oliver Liam",
+      "companyName": "Viking Burrito",
+      "email": "[EMAIL_ADDRESS]",
+      "vatNumber": "FRB1235476"
+    },
+    {
+      "name": "Lucas Harper",
+      "companyName": "Stone Tech Zone",
+      "email": "[EMAIL_ADDRESS]",
+      "vatNumber": "FRB1235476"
+    },
+    {
+      "name": "Ethan James",
+      "companyName": "Fiber Nation",
+      "email": "[EMAIL_ADDRESS]",
+      "vatNumber": "FRB1235476"
+    }
+    ]
+}

@@ -1,0 +1,56 @@
+<div class="outerlogin">
+  <div class="card-top">
+    <h2>Sign in</h2>
+    <div class="card-icon">
+      <img
+        mat-card-avatar
+        src="icons/image/images/png/git_login.png"
+        alt="github"
+        class="iconlog"
+        (click)="loginwithgithub()"
+      />
+      <img
+        mat-card-avatar
+        src="icons/image/images/png/fb_login.png"
+        alt="facebook"
+        class="iconlog"
+        (click)="loginwithfacebook()"
+      />
+      <img
+        mat-card-avatar
+        src="icons/image/images/png/birdtwitter (1).png"
+        alt="twitter"
+        class="iconlog"
+        (click)="loginwithX()"
+      />
+    </div>
+  </div>
+
+  <mat-card class="login-card">
+    <div class="login-card-container">
+      <form action="">
+        <mat-form-field appearance="outline" class="inputbox">
+          <mat-label class="labelfloat">Email</mat-label>
+          <input matInput type="email" [(ngModel)]="useremail" name="Email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="inputbox">
+          <mat-label class="labelfloat">Password</mat-label>
+          <input type="password" matInput [(ngModel)]="password" name="password" />
+        </mat-form-field>
+
+        <div class="toggle-rem">
+          <mat-slide-toggle></mat-slide-toggle>
+          <p>Remember me</p>
+        </div>
+
+        <button mat-raised-button type="button" class="login-btn" (click)="login()">Login</button>
+
+        <div class="links">
+          <a href="">Forgot Password?</a>
+          <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</div>

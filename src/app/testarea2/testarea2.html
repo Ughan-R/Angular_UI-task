@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div class="controls">
+    <button (click)="toggleRTL()">RTL Toggle</button>
+    <button (click)="toggleNavbarFix()">Fix Navbar</button>
+  </div>
+  <br>
+  <br>
+  <div 
+    class="navbar"
+    [class.rtl]="isRTL"
+    [class.fixed]="isNavbarFixed">
+
+    <h3>Navbar</h3>
+
+  </div>
+
+  <div class="content">
+    <p>Page Content</p>
+    <p>Click RTL to move navbar</p>
+    <p>Click Fix to lock navbar</p>
+  </div>
+
+</div>
+
+
+<div class="success-message" *ngIf="showsuccess">
+  Successfully Registered
+</div>
+
+<button>hi
+</button>
+<button (click)="register()">Register</button>

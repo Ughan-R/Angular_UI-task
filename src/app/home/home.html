@@ -1,0 +1,367 @@
+<div class="dashboard-content">
+  <!-- TOP CARDS -->
+  <div class="summary-card_container">
+    <!-- Card 1 -->
+    <div class="summary-card">
+      <div class="card-header">
+        <div class="card-icon dark-bg">
+          <img src="icons/image/images/svg/noun-menu.svg" alt="Dashboard" />
+        </div>
+        <div class="card-info">
+          <p class="card-label">Bookings</p>
+          <h3 class="card-value">281</h3>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p><span class="text-success">+55%</span> than last week</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="summary-card">
+      <div class="card-header">
+        <div class="card-icon blue-bg">
+          <img src="/icons/image/images/svg/noun-bar-chart.svg" alt="Bar Chart" id="bar-icon" />
+        </div>
+        <div class="card-info">
+          <p class="card-label">Today's Users</p>
+          <h3 class="card-value">2,300</h3>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p><span class="text-success">+3%</span> than last month</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="summary-card">
+      <div class="card-header">
+        <div class="card-icon green-bg">
+          <img src="/icons/image/images/svg/noun-store.svg" alt="Store" />
+        </div>
+        <div class="card-info">
+          <p class="card-label">Revenue</p>
+          <h3 class="card-value">34K</h3>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p><span class="text-success">+1%</span> than Yesterday</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="summary-card">
+      <div class="card-header">
+        <div class="card-icon pink-bg">
+          <img src="/icons/image/images/svg/noun-add.svg" alt="Add Person" />
+        </div>
+        <div class="card-info">
+          <p class="card-label">Followers</p>
+          <h3 class="card-value">+91</h3>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Just updated</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS ROW -->
+  <div class="charts-row">
+    <!-- Chart 1: Website Views -->
+    <div class="chart-card">
+      <div class="chart-header blue-bg">
+        <div class="chart-actions">
+          <img src="/icons/image/images/svg/noun-expand.svg" alt="Expand" (click)="closechartpopupcol()" />
+        </div>
+        <div class="chart-canvas ">
+          <div highchartsChart [options]="chartoptioncol" ></div>
+        </div>
+      </div>
+      <div class="chart-info">
+        <h4>Website Views</h4>
+        <p>Last Campaign Performance</p>
+      </div>
+      <div class="chart-footer">
+        <img src="/icons/image/images/svg/noun-time.svg" alt="Time" class="time-icon" />
+        <p>Campaign send 2 days ago</p>
+      </div>
+    </div>
+
+    <!-- Chart 2: Daily Sales -->
+    <div class="chart-card">
+      <div class="chart-header green-bg">
+        <div class="chart-actions">
+          <img src="/icons/image/images/svg/noun-expand.svg" alt="Expand" (click)="closechartpopupline()"/>
+        </div>
+        <div class="chart-canvas line-chart">
+          <div highchartsChart [options]="chartoptionline" ></div>
+        </div>
+      </div>
+      <div class="chart-info">
+        <h4>Daily Sales</h4>
+        <p><strong>(+15%)</strong> Increase In the today sales</p>
+      </div>
+      <div class="chart-footer">
+        <img src="/icons/image/images/svg/noun-time.svg" alt="Time" class="time-icon" />
+        <p>Updated 4 min ago</p>
+      </div>
+    </div>
+
+    <!-- Chart 3: Completed Tasks -->
+    <div class="chart-card">
+      <div class="chart-header dark-bg">
+        <div class="chart-actions">
+          <img src="/icons/image/images/svg/noun-expand.svg" alt="Expand" (click)="closechartpopupline1()" />
+        </div>
+        <div class="chart-canvas ">
+          <div highchartsChart [options]="chartoptionline2" ></div>
+        </div>
+        
+      </div>
+      <div class="chart-info">
+        <h4>Completed Tasks</h4>
+        <p>Last Campaign Performance</p>
+      </div>
+      <div class="chart-footer">
+        <img src="/icons/image/images/svg/noun-time.svg" alt="Time" class="time-icon" />
+        <p>Just updated</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- popup ================================= -->
+
+  <!-- column -->
+   <div class="coverbackcol" *ngIf="showchartpopupcol">
+  <div class="chart-popup" *ngIf="showchartpopupcol">
+    <div class="header-top">
+      <h2>Website Views</h2>
+      <p>Number of users visiter the website</p>
+    </div>
+  <img src="icons/image/images/png/close.png" alt="Close" id="close" (click)="closechartpopupcol()" />
+    <div class="chartboxpopup">
+      <div highchartsChart [options]="chartoptioncolpopup" ></div>
+    </div>
+  </div>
+</div>
+
+  <!-- line -->
+   <div class="coverbackline" *ngIf="showchartpopupline">
+  <div class="chart-popup" *ngIf="showchartpopupline">
+    <div class="header-top-line">
+      <h2>Daily Sales</h2>
+      <p>Sales of this Year</p> 
+    </div>
+  <img src="icons/image/images/png/close.png" alt="Close" id="close" (click)="closechartpopupline()" />
+    <div class="chartboxpopup">
+      <div highchartsChart [options]="chartoptionlinepopup" ></div>
+    </div>
+  </div>
+</div>
+
+  <!-- line1 -->
+   <div class="coverbackline1" *ngIf="showchartpopupline1">
+  <div class="chart-popup" *ngIf="showchartpopupline1">
+    <div class="header-top">
+      <h2>Completed Tasks</h2>
+      <p>Last Campaign Performance</p> 
+    </div>
+  <img src="icons/image/images/png/close.png" alt="Close" id="close" (click)="closechartpopupline1()" />
+    <div class="chartboxpopup">
+      <div highchartsChart [options]="chartoptionlinepopup1" ></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== -->
+  <!-- BOTTOM ROW -->
+  <div class="bottom-row">
+    <!-- Projects Table -->
+    <div class="projects-card">
+      <div class="card-header-flex">
+        <div class="titles">
+          <h3>projects</h3>
+          <p>
+            <img src="/icons/image/images/LightThemeSvg/done.svg" alt="done" />
+            <strong class="text-dark">30 done</strong> this month
+          </p>
+        </div>
+        <div class="actions">
+          <div class="search-bar table-search">
+            <input type="text" placeholder="Search here for Projects" />
+          </div>
+          <!-- <button class="icon-btn"><span class="material-symbols-rounded">open_in_full</span></button> -->
+          <img
+            src="/icons/image/images/svg/noun-expand.svg"
+            alt="Expand"
+            class="expand-icon"
+            (click)="openprojectcard()"
+          />
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>COMPANIES</th>
+              <th>MEMBERS</th>
+              <th>BUDGET</th>
+              <th>COMPLETION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects">
+              <td>
+                <div class="company-info">
+                  <img
+                    [src]="project.companyLogo"
+                    alt=""
+                    class="company-logo"
+                    [id]="project.githubId || null"
+                  />
+                  <span>{{ project.projectName }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="team-avatars">
+                  <img
+                    *ngFor="let avatar of project.teamMembers"
+                    [src]="avatar"
+                    class="avatar-small"
+                  />
+                </div>
+              </td>
+              <td>
+                <b>{{ project.budget }}</b>
+              </td>
+              <td >
+                <div class="progress-bar" [ngClass]="project.progressColor">
+                  <div class="progress" [style.width.%]="project.completion" ></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Orders Overview Timeline -->
+    <div class="orders-card">
+      <div class="card-header-flex">
+        <div class="titles">
+          <h3>Orders overview</h3>
+          <p>
+            <img src="/icons/image/images/LightThemeSvg/green_up_arrow.svg" alt="UP arrow" />
+            <strong class="text-dark">24%</strong> this month
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon text-success">
+            <span class="material-symbols-rounded">notifications</span>
+          </div>
+          <div class="timeline-content">
+            <h4>$2400, Design changes</h4>
+            <p>22 DEC 7:20 PM</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon text-danger">
+            <span class="material-symbols-rounded">shopping_cart</span>
+          </div>
+          <div class="timeline-content">
+            <h4>New order #1832412</h4>
+            <p>21 DEC 11 PM</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon text-blue">
+            <span class="material-symbols-rounded">inventory_2</span>
+          </div>
+          <div class="timeline-content">
+            <h4>Server Payments for April</h4>
+            <p>21 DEC 9:34 PM</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon text-orange">
+            <span class="material-symbols-rounded">payment</span>
+          </div>
+          <div class="timeline-content">
+            <h4>New Card added for order #4395133</h4>
+            <p>20 DEC 2:20 PM</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon text-pink">
+            <span class="material-symbols-rounded">vpn_key</span>
+          </div>
+          <div class="timeline-content">
+            <h4>New Card added for order #4395133</h4>
+            <p>18 DEC 4:54 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================================================================ -->
+<div class="overlay" *ngIf="showprojectscard">
+  <div class="projects-card-popup" *ngIf="showprojectscard">
+    <img src="icons/image/images/png/close.png" alt="close" (click)="openprojectcard()" id="close" />
+    <div class="table-responsive">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>COMPANIES</th>
+            <th>MEMBERS</th>
+            <th>BUDGET</th>
+            <th>COMPLETION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td>
+              <div class="company-info">
+                <img
+                  [src]="project.companyLogo"
+                  alt=""
+                  class="company-logo"
+                  [id]="project.githubId || null"
+                />
+                <span>{{ project.projectName }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="team-avatars">
+                <img
+                  *ngFor="let avatar of project.teamMembers"
+                  [src]="avatar"
+                  class="avatar-small"
+                />
+              </div>
+            </td>
+            <td>
+              <b>{{ project.budget }}</b>
+            </td>
+            <td>
+              <div class="progress-bar" [ngClass]="project.progressColor">
+                <div class="progress" [style.width.%]="project.completion"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================================== -->

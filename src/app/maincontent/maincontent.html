@@ -1,0 +1,218 @@
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" [class.right]="Right" [ngClass]="sidebarcolorchange" (click)="closeprofilemanual()">
+    <div class="logo">
+      <h2><img src="/icons/image/images/png/Logo_Company.png" alt="Logo_Company" /></h2>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/maincontent/home" class="nav-item" routerLinkActive="active">
+        <div class="nav-icon">
+          <img src="/icons/image/images/svg/noun-dashboard.svg" alt="Dashboard" />
+        </div>
+        <span class="nav-text">Dashboard</span>
+      </a>
+      <a routerLink="/maincontent/tables" class="nav-item" routerLinkActive="active">
+        <div class="nav-icon">
+          <img src="/icons/image/images/svg/noun-table-grid.svg" alt="Tables" />
+        </div>
+        <span class="nav-text">Tables</span>
+      </a>
+      <a routerLink="/maincontent/billing" class="nav-item" routerLinkActive="active">
+        <div class="nav-icon">
+          <img src="/icons/image/images/svg/noun-billing.svg" alt="Billing" />
+        </div>
+        <span class="nav-text">Billing</span>
+      </a>
+      <!-- <a routerLink="/rtl" class="nav-item" routerLinkActive="active" (click)="isRight()" *ngIf="isNavbarFixed" >
+        <div class="nav-icon-rtl"><img src="/icons/image/images/svg/noun-RTL.svg" alt="RTL" /></div>
+        <span class="nav-text">RTL</span>
+      </a> -->
+      <a routerLink="/maincontent/notification" class="nav-item" routerLinkActive="active">
+        <div class="nav-icon">
+          <img
+            src="/icons/image/images/svg/noun-notifications_bell.svg"
+            alt="Notifications"
+            id="bell"
+          />
+        </div>
+        <span class="nav-text">Notifications</span>
+      </a>
+      <a routerLink="/maincontent/profile" class="nav-item" routerLinkActive="active">
+        <div class="nav-icon">
+          <img src="/icons/image/images/svg/noun-profiles.svg" alt="Profile" />
+        </div>
+        <span class="nav-text">Profile</span>
+      </a>
+      <a class="nav-item" routerLinkActive="active" (click)="logoutconf()">
+        <div class="nav-icon">
+          <img src="/icons/image/images/svg/noun-sign-up.svg" alt="Sign out" />
+        </div>
+        <span class="nav-text" >Sign out</span>
+      </a>
+    </nav>
+  </aside>
+
+  <div class="layoutman" [class.right]="Right" [class.fixed]="isNavbarFixed">
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div class="header-left">
+          <!-- header left part starts -->
+          <div class="breadcrumbs">
+            <img [src]="isdarktheme ? 'icons/image/images/png/home_nav.png':'icons/image/images/svg/noun-homes.svg'" alt="Home" class="home-icon" />
+            <span class="separator">/</span>
+            <span>{{ pageTitle }}</span>
+          </div>
+          <h1 class="page-title">{{ pageTitle }}</h1>
+        </div>
+        <!-- header left part ends -->
+        <div class="header-right">
+          <!-- header right part starts -->
+          <div class="search-bar">
+            <input type="text" placeholder="Search here" />
+          </div>
+          <div class="header-icons">
+            <button class="icon-btn">
+              <img [src]="isdarktheme ? 'icons/image/images/png/icons8-avatar-90.png':'icons/image/images/LightThemeSvg/headerProfile.svg' " alt="Profile" (click)="profileclick()" />
+            </button>
+            <button class="icon-btn" id="setting" (click)="togglesettings()" (click)="closeprofilemanual()">
+              <!-- <img src="icons/image/images/LightThemeSvg/headerSetting.svg" alt="Settings" /> -->
+              <img src="icons/image/images/LightThemeSvg/headerSetting.svg" alt="Settings" />
+            </button>
+            <button class="icon-btn">
+              <img
+                src="/icons/image/images/svg/noun-notifications_bell.svg"
+                alt="Notifications"
+                id="bell" (click)="routernoti()"
+              />
+            </button>
+          </div>
+        </div>
+        <!-- header right part ends -->
+      </header>
+
+      <div class="content-wrapper" (click)="closeprofilemanual()">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+
+    <!-- settings box -->
+    <div class="settings-box" [class.open]="issetopen" *ngIf="issetopen" > 
+      <div class="cancle-settings">
+         <img [src]="isdarktheme ? 'icons/image/images/png/icons8-close-48.png':'icons/image/images/png/close.png'" alt="close" (click)="togglesettings()">
+      </div>
+      <div class="settings-maincontent">
+        <h3>Settings Option</h3>
+        <p>choose your option</p>
+        <br />   
+
+        <h4>Sidebar Color</h4>
+        <div class="color-option">
+          <div class="color lightpink" (click)="changecolor('lightpink')" [class.active]="sidebarcolorchange === 'lightpink'"></div>
+
+          <div class="color black" (click)="changecolor('black')" [class.active]="sidebarcolorchange === 'black'"></div>
+
+          <div class="color blue" (click)="changecolor('blue')"  [class.active]="sidebarcolorchange === 'blue'"></div>
+
+          <div class="color green" (click)="changecolor('green')" [class.active]="sidebarcolorchange === 'green'"></div>
+
+          <div class="color orange" (click)="changecolor('orange')" [class.active]="sidebarcolorchange === 'orange'"></div>
+
+          <div class="color lightred" (click)="changecolor('lightred')" [class.active]="sidebarcolorchange === 'lightred'"></div>
+        </div>
+        
+        <div class="sidenav-type-main">
+          
+        <h4>SideNav Type</h4>
+        <p>Choose between different sidenav types</p>
+        <div class="sidenav-type">
+          <div class="sidenav-type-option" [class.active]="selectedoption === 'dark'" (click)="setoption('dark')">Dark</div>
+          <div class="sidenav-type-option" [class.active]="selectedoption === 'transparent'" (click)="setoption('transparent')">Transparent</div>
+          <div class="sidenav-type-option" [class.active]="selectedoption === 'white'" (click)="setoption('white')">white</div>
+        </div>
+        </div>
+
+        <div class="settingsoption">
+          <h4>Nav-Bar Fixed</h4>
+          <mat-slide-toggle class="toggle-switch positionfixed" (click)="isnavbarfixed()"></mat-slide-toggle>
+        </div>
+        <div class="settingsoption">
+          <h4>Light / Dark</h4>
+          <mat-slide-toggle class="toggle-switch darkmode" (click)="toggleTheme()"></mat-slide-toggle>
+        </div>
+        <div class="viewdoc">
+          <button>View Documentation</button>
+        </div>
+        <div class="thxsbox">
+          <h4>Thank You for Sharing !</h4>
+        </div>
+
+        <div class="sociallink">
+          <div class="socialbox twitter-box">
+            <img src="/icons/image/images/png/twitter.png" alt=""><p>TWEET</p>
+          </div>
+          <div class="socialbox facebook-box">
+            <img src="/icons/image/images/png/fb.png" alt=""><p>SHARE</p>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <button class="floating-settings-btn" id="setting" (click)="togglesettings()">
+      <img src="icons/image/images/LightThemeSvg/headerSetting.svg" alt="Settings" />
+    </button>
+    <!-- Footer -->
+    <footer class="footer">
+      <!-- floating settings btn at bottom right -->
+      <div class="footer-links">
+        <p> Copyright © 2023 celcom solutions. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="logoutpopup" *ngIf="islogoutconfirm">
+  <div class="logout-box">
+    <div class="logout-header">
+      <h3>Logging Out</h3>
+      <p>Are you sure you want to logout?</p>
+    </div>
+    <div class="logout-footer">
+      <button class="logout-btn" (click)="logout()">Logout</button>
+      <button class="cancel-btn" (click)="cancelLogout()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="profilecard" *ngIf="isprofileactive">
+  <div class="profilecombo" (click)="profile()">
+    <img src="icons/image/images/png/user_project.png" alt="Profile" />
+    <p>Profile</p>
+  </div>
+  <div class="horizontal-divider"></div>
+  <div class="profilecombo">
+    <img src="icons/image/images/png/icons8-fairytale-48.png" alt="Upgrade plan" id="dark" />
+    <p>update plan</p>
+  </div>
+  <div class="horizontal-divider"></div>
+  <div class="profilecombo">
+    <img src="icons/image/images/png/icons8-communicate-48.png" alt="Help center" id="dark">
+    <p>Help Center</p>
+  </div>
+  <div class="horizontal-divider"></div>
+  <div class="profilecombo">
+    <img [src]="isdarktheme ? 'icons/image/images/png/icons8-sun-50.png':'icons/image/images/png/icons8-moon-90.png'" alt="darkmode" id="dark">
+    <p>theme</p>
+    <mat-slide-toggle class="toggle-switchprofile" (click)="toggleTheme()"></mat-slide-toggle>
+  </div>
+  <div class="horizontal-divider"></div>
+  <div class="profilecombo"(click)="logoutconf()">
+    <img src="icons/image/images/png/icons8-logout-48.png" id="dark" alt="logout" >
+    <p>logout</p>
+  </div>
+</div>
+

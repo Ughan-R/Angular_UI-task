@@ -1,0 +1,171 @@
+<p>testarea works!</p>
+
+<!-- <div class="navbar" [class.right]="isRight">
+  Navbar Content
+  <button (click)="toggleNavbar()">Toggle Navbar</button>
+</div>
+ -->
+
+<!-- advanced Part -->
+
+<div class="layout" [class.right]="isRight">
+  <div class="navbar">Navbar</div>
+
+  <div class="content">Your main content here</div>
+</div>
+
+<button (click)="toggleNavbar()">Toggle</button>
+
+<!-- testing icons with google features -->
+<div class="social-icons">
+  <img src="assets/google.png" (click)="loginWithGoogle()" />
+  <img src="assets/github.png" (click)="loginWithGithub()" />
+  <img src="assets/x.png" (click)="loginWithX()" />
+</div>
+
+<!-- <mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> This is the expansion title </mat-panel-title>
+      <mat-panel-description> This is a summary of the content </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion>
+<div class="transaction-group">
+  <h4 class="group-title">NEWEST</h4>
+  <div class="transaction-item" *ngFor="let tx of newestTransactions">
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+    <div class="tx-icon" [ngClass]="tx.status" (click)="toggletx(tx.isOpen)">
+      <img *ngIf="tx.status === 'down'" src="icons/image/images/LightThemeSvg/accord_red.svg" />
+      <img *ngIf="tx.status === 'up'" src="/icons/image/images/LightThemeSvg/accord_green.svg" />
+    </div>
+    <div class="tx-info"> 
+      <h4>{{ tx.name }}</h4>
+      <p>{{ tx.date }}</p>
+    </div>
+  </mat-panel-title>
+  <mat-panel-description>
+    <div class="tx-amount" [ngClass]="tx.type">
+      {{ tx.type === 'credit' ? '+' : '-' }}${{ tx.amount | number }}
+    </div>
+    </mat-panel-description> 
+  </mat-expansion-panel-header>
+     <p>{{tx.isOpen}}</p>
+</mat-expansion-panel>
+  </div>
+  
+</div>
+<div class="transaction-group">
+  <h4 class="group-title">YESTERDAY</h4>
+  <div class="transaction-item" *ngFor="let tx of olderTransactions">
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+    <div class="tx-icon" [ngClass]="tx.status" (click)="toggletx(tx.isOpen)">
+      <img *ngIf="tx.status === 'down'" src="icons/image/images/LightThemeSvg/accord_red.svg" />
+      <img *ngIf="tx.status === 'up'" src="/icons/image/images/LightThemeSvg/accord_green.svg" />
+    </div>
+    <mat-panel-title>
+    <div class="tx-info">
+      <h4>{{ tx.name }}</h4>
+      <p>{{ tx.date }}</p>
+    </div>
+      </mat-panel-title>
+  <mat-panel-description>
+    <div class="tx-amount" [ngClass]="tx.type">
+      {{ tx.type === 'credit' ? '+' : '-' }}${{ tx.amount | number }}
+    </div>
+  </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>{{tx.isOpen}}</p>
+</mat-expansion-panel>
+  </div>
+</div>
+</mat-accordion> -->
+
+<div class="dashboard-container">
+
+  <!-- HEADER -->    
+  <div class="header">
+    <h2>Dashboard</h2>
+
+    <button (click)="toggleSettings()" class="settings-btn">
+      ⚙️
+    </button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+    <p>Your dashboard content here</p>
+  </div>
+
+  <!-- SETTINGS PANEL -->
+
+  <aside class="sidebar" [ngClass]="sidebarColor">
+  
+  <h2>Dashboard</h2>
+
+</aside>
+
+  <div class="settings-panel" [class.open]="isSettingsOpen">
+
+    <h3>Settings</h3>
+
+    <button (click)="toggleSettings()">❌</button>
+
+      <h3>Sidebar Colors</h3>
+
+  <div class="color-options">
+
+    <div class="color red" (click)="changeSidebarColor('red')"></div>
+
+    <div class="color blue" (click)="changeSidebarColor('blue')"></div>
+
+    <div class="color green" (click)="changeSidebarColor('green')"></div>
+
+    <div class="color yellow" (click)="changeSidebarColor('yellow')"></div>
+
+  </div>
+
+  </div>
+
+</div>
+
+
+<!-- toggle slider without angular material -->
+
+<div class="transaction-group">
+  <h4 class="group-title">NEWEST</h4>
+
+  <div class="transaction-item" *ngFor="let tx of newestTransactions">
+
+    <div class="tx-row" (click)="toggleTx(tx)">
+      
+      <div class="tx-icon" [ngClass]="tx.status">
+        <img *ngIf="tx.status === 'down'" src="icons/image/images/LightThemeSvg/accord_red.svg" />
+        <img *ngIf="tx.status === 'up'" src="/icons/image/images/LightThemeSvg/accord_green.svg" />
+      </div>
+
+      <div class="tx-info">
+        <h4>{{ tx.name }}</h4>
+        <p>{{ tx.date }}</p>
+      </div>
+
+      <div class="tx-amount" [ngClass]="tx.type">
+        {{ tx.type === 'credit' ? '+' : '-' }}${{ tx.amount | number }}
+      </div>
+    </div>
+
+    <!-- Toggle Content -->
+    <div class="tx-details" [class.open]="tx.isOpen">
+      <!-- <p>Transaction ID: {{ tx.id }}</p> -->
+      <p>Status: {{ tx.type }}</p>
+      <p>Amount: ${{ tx.amount }}</p>
+    </div>
+
+  </div>
+</div>

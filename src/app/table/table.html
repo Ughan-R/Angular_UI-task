@@ -1,0 +1,278 @@
+<div class="tables-container">
+  <!-- Authors Table Card -->
+
+  <div class="table-card-header">
+    <h3 class="table-title">Authors Table</h3>
+    <div class="search-box">
+      <input type="text" placeholder="Search here for Projects" class="search-input" />
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-responsive">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th class="cursor-pointer" (click)="sortAuthors('name')">
+              AUTHOR
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th class="cursor-pointer" (click)="sortAuthors('role')">
+              FUNCTION
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th class="cursor-pointer" (click)="sortAuthors('status')">
+              STATUS
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th class="cursor-pointer" (click)="sortAuthors('rawDate')">
+              EMPLOYED
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let author of authors">
+            <td>
+              <div class="info-group">
+                <p class="name-text">{{ author.name }}</p>
+                <p class="sub-text">{{ author.email }}</p>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <p class="name-text">{{ author.role }}</p>
+                <p class="sub-text">{{ author.department }}</p>
+              </div>
+            </td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'badge-online': author.status === 'ONLINE',
+                  'badge-offline': author.status === 'OFFLINE',
+                }"
+                >{{ author.status }}</span
+              >
+            </td>
+            <td>
+              <span class="date-text">{{ author.date }}</span>
+            </td>
+            <td>
+              <a href="javascript:void(0)" class="action-link">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- <div class="table-pagination">
+      <span class="page-arrow">&lt;</span>
+      <span class="page-num">1</span>
+      <span class="page-num">2</span>
+      <span class="page-num active">3</span>
+      <span class="page-num">4</span>
+      <span class="page-num">5</span>
+      <span class="page-dots">...</span>
+      <span class="page-num">10</span>
+      <span class="page-arrow active-arrow">&gt;</span>
+    </div> -->
+  </div>
+
+  <!-- API project table implementation -->
+  <div class="table-card-header">
+    <h3 class="table-title">Project Table</h3>
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="Search here for Projects"
+        class="search-input"
+        [(ngModel)]="searchvalue"
+        (input)="filtersearch()"
+      />
+      <div class="new-data" (click)="openaddproject()">
+        <img src="/icons/image/images/png/icons8-plus-48.png" alt="" />
+        <p>new project</p>
+      </div>
+    </div>
+    <!-- <div class="add-table">
+      
+    </div> -->
+  </div>
+  <div class="table-card">
+    <div class="table-responsive">
+      <table class="custom-table project-table">
+        <thead>
+          <tr>
+            <th class="cursor-pointer">
+              employee
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th class="cursor-pointer">
+              BUDGET
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th class="cursor-pointer">
+              work performance
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th class="cursor-pointer">
+              COMPLETION
+              <img src="/icons/image/images/svg/noun-sorting.svg" class="sort-icon" alt="sort" />
+            </th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div *ngIf="!isdataloaded" class="no-dataavailable">
+            <p>No data available now</p>
+          </div>
+          <tr *ngFor="let project of paginationdata">
+            <td class="project-name-logo">
+              <span class="project-name">{{ project.name }}</span>
+            </td>
+            <td>
+              <span class="budget-value text-center">₹ {{ project.total }}</span>
+            </td>
+            <td>
+              <span class="td-center">{{ project.grade }}</span>
+            </td>
+            <td>
+              <div class="completion-data">
+                <span class="completion-percent">{{ project.maths }}%</span>
+                <div class="progress-bar-bg">
+                  <div
+                    class="progress-bar-fill"
+                    [style.width.%]="project.maths"
+                    [ngClass]="{
+                      'bg-green': project.maths === 100,
+                      'bg-blue': project.maths < 100,
+                      'bg-red': project.maths < 35,
+                    }"
+                  ></div>
+                  <span class="progress-tooltip"> {{ project.maths }}% </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span class="action-link" (click)="openedit(project)">Edit</span>
+              <span class="action-link" id="delete" (click)="deleteopen(project.id)">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="below-container">
+        <!-- <div class="new-data" (click)="openaddproject()">
+          <img src="/icons/image/images/png/icons8-plus-48.png" alt="" />
+          <p>new project</p>
+        </div> -->
+        <div class="pagination">
+          <div class="pagination-left" (click)="previouspage()">
+            <img src="/icons/image/images/png/icons8-sort-left-90.png" alt="LEFT-ARROW" />
+          </div>
+          <p>{{ currentpage }}</p>
+          <div class="pagination-right" (click)="nextpage()">
+            <img src="/icons/image/images/png/icons8-sort-right-90.png" alt="RIGHT-ARROW" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="edit-mode-popup" *ngIf="iseditmode">
+  <div class="editmode-main">
+    <h2>Edit Employee Data</h2>
+    <form action="" [formGroup]="iseditform">
+    <label for="">
+      Employee:
+      <input type="text" formControlName="name" placeholder="Enter employee name" />
+    </label>
+    <label for="">
+      Budget invested:
+      <input type="number" formControlName="total" placeholder="Enter the budget" />
+    </label>
+    <label for="">
+      Work performance:
+      <input
+        type="text"
+        formControlName="grade"
+        placeholder="Enter the work performance grade"
+      />
+    </label>
+    <label for="">
+      Completion:
+      <input
+        type="text"
+        formControlName="maths"
+        placeholder="Enter the completion percentage"
+      />
+    </label>
+    <div class="edit-btn">
+      <button type="button" (click)="updateemployeedata()">Update</button>
+      <button type="button" (click)="closedit()">Cancel</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="deletepopup" *ngIf="isdelete">
+  <div class="delete-box">
+    <div class="delete-header">
+      <h3>Delete</h3>
+      <p>Are you sure you want to delete?</p>
+    </div>
+    <div class="delete-footer">
+      <button class="delete-btn" (click)="deleteemployee()" id="del-bg">Delete</button>
+      <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="newproject-popup" *ngIf="isaddproject">
+  <div class="newproject-main">
+    <h2>Add New Project info</h2>
+    <form action="" [formGroup]="newprojectform">
+    <label for="">
+      Employee:
+      <input type="text" formControlName="name" placeholder="Enter employee name" />
+      <p class="error" *ngIf="newprojectform.get('name')?.invalid && newprojectform.get('name')?.touched">Employee name is required</p>
+    </label>
+    <label for="">
+      Budget invested:
+      <input type="text" formControlName="total" placeholder="Enter the budget" />
+      <p class="error" *ngIf="newprojectform.get('total')?.invalid && newprojectform.get('total')?.touched">Budget invested is required</p>
+    </label>
+    <label for="">
+      Work performance:
+      <input 
+        type="text"
+        formControlName="grade"
+        placeholder="Enter the work performance grade"
+      />
+      <p class="error" *ngIf="newprojectform.get('grade')?.invalid && newprojectform.get('grade')?.touched">Work performance is required</p>
+    </label>
+    <label for="">
+      Completion:
+      <input
+        type="text"
+        formControlName="maths"
+        placeholder="Enter the completion percentage"
+      />
+      <p class="error" *ngIf="newprojectform.get('maths')?.invalid && newprojectform.get('maths')?.touched">Completion is required</p>
+    </label>
+    <div class="newproject-btn">
+      <button type="button" (click)="newprojectdata()">Add</button>
+      <button type="button" (click)="closeproject()">Cancel</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="success-message" *ngIf="msg">
+  <p>{{ msg }}</p>
+</div>
+<div class="error-message" *ngIf="failmsg">
+  <p>{{ failmsg }}</p>
+</div>

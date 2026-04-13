@@ -1,0 +1,91 @@
+﻿[33mΓ¥»[39m Building...
+node.exe : Γû▓ 
+[WARNING] NG8113: 
+Login is not used 
+within the template of 
+App [plugin 
+angular-compiler]
+At C:\Users\Home\AppDat
+a\Roaming\npm\ng.ps1:24
+ char:5
++     & "node$exe"  "$b
+asedir/node_modules/@an
+gular/cli/bin/ng.js" 
+$arg ...
++     ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Γû▓ [WARNING]   
+  N...gular-compile    
+r]:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+
+    
+src/app/app.ts:10:26:
+      10 Γöé   
+imports: 
+[RouterOutlet, 
+Login,CommonModule],
+         Γò╡           
+                ~~~~~
+
+1 warning
+
+  chunk-NXOHMB2Y.js    
+    1.9mb
+  main.js              
+  184.8kb
+  chunk-H6ZKDIDM.js    
+  179.0kb
+  
+chunk-NXOHMB2Y.js.map  
+  4.4mb
+  main.js.map          
+  256.7kb
+  ...and 1 more output 
+file...
+
+Done in 8689ms
+[32mΓ£ö[39m Building...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-NXOHMB2Y.js[39m  [2m | [22m[2m-[22m                 [2m | [22m  [36m2.00 MB[39m[2m | [22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m              [2m | [22m[36m189.20 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m            [2m | [22m  [36m9.93 kB[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m     [2m | [22m  [1m2.20 MB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-H6ZKDIDM.js[39m  [2m | [22m[2mmaincontent-routes[22m[2m | [22m[36m183.25 kB[39m[2m | [22m
+
+Application bundle generation complete. [9.347 seconds] - 2026-03-11T10:05:19.424Z
+
+[1m[33m[33mΓû▓ [43;
+33m[[43;30mWARNING[43
+;33m][0m [1mNG8113: 
+Login is not used 
+within the template of 
+App[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/app.ts:10:26:
+[37m      10 Γöé   
+imports: 
+[RouterOutlet, [32mLog
+in[37m,CommonModule],
+         Γò╡           
+                
+[32m~~~~~[0m
+
+[39m[22m
+Output location: C:\Task UI Project\AI projecttest\mainproject\dist\mainproject
+
+

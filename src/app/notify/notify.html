@@ -1,0 +1,66 @@
+<div class="notifications-container">
+  <!-- Alerts Card -->
+  <div class="card alerts-card">
+    <div class="card-body">
+      <div class="card-header">
+        <h5 class="card-title">Alerts</h5>
+      </div>
+      <div class="alert alert-primary">
+        A simple primary alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-secondary">
+        A simple secondary alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-success">
+        A simple success alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-error">
+        A simple error alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-warning">
+        A simple warning alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-info">
+        A simple info alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-light">
+        A simple light alert with an example link. Give it a click if you like.
+      </div>
+      <div class="alert alert-dark">
+        A simple dark alert with an example link. Give it a click if you like.
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications Section Card -->
+  <div class="card notifications-section-card">
+    <div class="card-body">
+      <div class="card-header">
+        <h5 class="card-title">Notifications</h5>
+        <p class="card-subtitle">Notifications is an example of this project. Read more details here.</p>
+      </div>
+      <div class="notifications-buttons">
+        <button class="btn btn-success" (click)="opensuccess()">SUCCESS NOTIFICATION</button>
+        <button class="btn btn-info" (click)="openinfo()">INFO NOTIFICATION</button>
+        <button class="btn btn-warning" (click)="openwarning()">WARNING NOTIFICATION</button>
+        <button class="btn btn-error" (click)="openerror()">ERROR NOTIFICATION</button>
+      </div>
+
+      <div class="success-message" *ngIf="showsuccess">
+        <p>Success! Your message has been sent.</p>
+      </div>
+
+      <div class="info-message" *ngIf="showinfo">
+        <p>Info! Your message has been sent.</p>
+      </div>
+
+      <div class="warning-message" *ngIf="showwarning">
+        <p>Warning! Your message has been sent.</p>
+      </div>
+
+      <div class="error-message" *ngIf="showerror">
+        <p>Error! Your message has been sent.</p>
+      </div>
+    </div>
+  </div>
+</div>

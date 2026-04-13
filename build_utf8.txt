@@ -1,0 +1,15 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-ZCO4WDLS.js[39m  [2m | [22m[2m-[22m                 [2m | [22m[36m376.77 kB[39m[2m | [22m               [36m90.36 kB[39m
+[32mmain-BW2I4PCJ.js[39m   [2m | [22m[2mmain[22m              [2m | [22m [36m73.03 kB[39m[2m | [22m               [36m13.36 kB[39m
+[32mstyles-OWJGSEAQ.css[39m[2m | [22m[2mstyles[22m            [2m | [22m  [36m8.99 kB[39m[2m | [22m                [36m1.71 kB[39m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m     [2m | [22m[1m458.79 kB[22m[2m | [22m              [1m105.42 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-3X2O7UCC.js[39m  [2m | [22m[2mmaincontent-routes[22m[2m | [22m [36m76.03 kB[39m[2m | [22m               [36m13.68 kB[39m
+
+Application bundle generation failed. [7.823 seconds] - 2026-03-11T10:02:37.248Z
+
+
