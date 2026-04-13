@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class Userinfo {
   
-  // private url = 'http://localhost:3000/userinfo';
+  private url = 'http://localhost:3000/userinfo';
 
-  private url = 'YOUR_API_URL';
+  // private url = 'YOUR_API_URL';
 
   constructor(private http: HttpClient) { }
 
