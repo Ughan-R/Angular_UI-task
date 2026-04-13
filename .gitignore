@@ -1,10 +1,6 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 
-#API call
-1. table Api = "http://192.168.79.2:30029/dynamic-object/v1/sobjects/student"
-2.billing Api = "https://69d612f81c120e733ccd8dc2.mockapi.io/mainprojectapi/userinfo"
-
 # Compiled output
 /dist
 /tmp
