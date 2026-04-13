@@ -8,7 +8,7 @@ export class Userinfo {
   
   // private url = 'http://localhost:3000/userinfo';
 
-  private url = 'https://69d612f81c120e733ccd8dc2.mockapi.io/mainprojectapi/userinfo';
+  private url = 'YOUR_API_URL';
 
   constructor(private http: HttpClient) { }
 

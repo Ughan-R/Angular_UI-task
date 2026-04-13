@@ -8,7 +8,7 @@ export class Getapidata {
   
   constructor(private http:HttpClient){}
 
-  private url ="http://192.168.79.2:30029/dynamic-object/v1/sobjects/student";
+  private url ="YOUR_API_URL";
 
   getdata(){
     return this.http.get(this.url);
